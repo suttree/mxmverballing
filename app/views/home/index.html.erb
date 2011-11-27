@@ -1,0 +1,9 @@
+<h1>MxM Verballing</h1>
+
+<div id='users'>
+  <ul>
+    <% @users.in_groups_of(4) do |user| %>
+      <li><%= user.name %></li>
+    <% end %>
+  </ul>
+</div>
