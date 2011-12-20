@@ -1,9 +1,20 @@
 <h1>MxM Verballing</h1>
 
-<div id='users'>
-  <ul>
-    <% @users.in_groups_of(4) do |user| %>
-      <li><%= user.name %></li>
-    <% end %>
-  </ul>
-</div>
+<%= form_for @meeting do |f| %>
+  <div id='users'>
+    <ul>
+      <% @users.in_groups_of(4) do |users| %>
+        <li>
+          <% users.each do |user| %>
+            <% if user %>
+              <%= check_box_tag user.id, user.id, false, :name => 'meeting[user_ids][]' -%>
+              <%= label_tag user.id, image_tag('/assets/avatars/' + user.image) -%>
+              <%#= image_tag('/assets/avatars/' + user.image) %>
+            <% end %>
+          <% end%>
+        </li>
+      <% end %>
+    </ul>
+    <%= f.submit %>
+  </div>
+<% end %>

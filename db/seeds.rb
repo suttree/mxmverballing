@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+[
+  {:name => 'Tim Malbon', :image => 'avatar_tim_slider.gif'},
+  {:name => 'William Owen', :image => 'avatar_william_slider.gif'}
+].each do |user|
+  User.create(:name => user[:name], :image => user[:image])
+end
+
