@@ -1,10 +1,12 @@
-<h1>MxM Verballing</h1>
+<h1><a href='/'>MxM Verballing</a></h1>
+
+<%= link_to 'All meetings', meetings_path %>
 
 <div id='users'>
   <ul>
     <% @meetings.each do |meeting| %>
       <li>
-        <%= meeting.client.name %>, <%= time_ago_in_words(meeting.created_at) %> ago.
+        <%= pluralize(meeting.hours, 'hour') %> on <%= meeting.client.name %>, <%= time_ago_in_words(meeting.created_at) %> ago.
         <br/>
         <% meeting.users.in_groups_of(4) do |users| %>
           <% users.each do |user| %>
@@ -16,3 +18,5 @@
     <% end %>
   </ul>
 </div>
+
+<%= will_paginate @meetings %>
