@@ -9,7 +9,6 @@ gem 'pg'
 gem 'mysql2'
 
 gem 'json'
-gem 'execjs'
 
 gem 'will_paginate', '~> 3.0'
 
