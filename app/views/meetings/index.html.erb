@@ -1,0 +1,18 @@
+<h1>MxM Verballing</h1>
+
+<div id='users'>
+  <ul>
+    <% @meetings.each do |meeting| %>
+      <li>
+        <%= meeting.client.name %>, <%= time_ago_in_words(meeting.created_at) %> ago.
+        <br/>
+        <% meeting.users.in_groups_of(4) do |users| %>
+          <% users.each do |user| %>
+            <%= image_tag('/assets/avatars/' + user.image, :height => '45', :width => '37') if user %>
+          <% end %>
+          <br/>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -9,12 +9,17 @@
             <% if user %>
               <%= check_box_tag user.id, user.id, false, :name => 'meeting[user_ids][]' -%>
               <%= label_tag user.id, image_tag('/assets/avatars/' + user.image) -%>
-              <%#= image_tag('/assets/avatars/' + user.image) %>
             <% end %>
           <% end%>
         </li>
       <% end %>
     </ul>
+    <%= f.label :client_id %>
+    <%= f.select :client_id, Client.all.map { |c| [c.name, c.id] } %>
+    <br/>
+    <%= f.label :hours %>
+    <%= f.text_field :hours, :value => 0, :size => 2 %>
+    <br/>
     <%= f.submit %>
   </div>
 <% end %>
