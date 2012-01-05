@@ -6,8 +6,8 @@
           <li>
             <% users.each do |user| %>
               <% if user %>
-                <%= check_box_tag user.id, user.id, false, :name => 'meeting[user_ids][]' -%>
                 <%= label_tag user.id, image_tag('/assets/avatars/' + user.image, :height => 180, :width => 150) -%>
+                <%= check_box_tag user.id, user.id, false, :name => 'meeting[user_ids][]' -%>
               <% end %>
             <% end%>
           </li>
