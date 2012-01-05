@@ -1,7 +1,3 @@
-<h1><a href='/'>MxM Verballing</a></h1>
-
-<%= link_to 'All meetings', meetings_path %>
-
 <div id='users'>
   <ul>
     <% @meetings.each do |meeting| %>
@@ -10,13 +6,13 @@
         <br/>
         <% meeting.users.in_groups_of(4) do |users| %>
           <% users.each do |user| %>
-            <%= image_tag('/assets/avatars/' + user.image, :height => '45', :width => '37') if user %>
+            <%= image_tag('/assets/avatars/' + user.image, :height => '90', :width => '74') if user %>
           <% end %>
           <br/>
         <% end %>
       </li>
     <% end %>
   </ul>
+  <%= will_paginate @meetings %>
 </div>
 
-<%= will_paginate @meetings %>
