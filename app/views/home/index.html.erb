@@ -1,27 +1,25 @@
-<h1><a href='/'>MxM Verballing</a></h1>
-
-<%= link_to 'All meetings', meetings_path %>
-
 <%= form_for @meeting do |f| %>
   <div id='users'>
-    <ul>
-      <% @users.in_groups_of(3) do |users| %>
-        <li>
-          <% users.each do |user| %>
-            <% if user %>
-              <%= check_box_tag user.id, user.id, false, :name => 'meeting[user_ids][]' -%>
-              <%= label_tag user.id, image_tag('/assets/avatars/' + user.image) -%>
-            <% end %>
-          <% end%>
-        </li>
-      <% end %>
-    </ul>
-    <%= f.label :client_id %>
-    <%= f.select :client_id, Client.order(:name).all.map { |c| [c.name, c.id] } %>
-    <br/>
-    <%= f.label :hours %>
-    <%= f.select :hours, 1.step(7, 0.5) %>
-    <br/>
-    <%= f.submit %>
+    <section id='splodges'>
+      <ul>
+        <% @users.in_groups_of(3) do |users| %>
+          <li>
+            <% users.each do |user| %>
+              <% if user %>
+                <%= check_box_tag user.id, user.id, false, :name => 'meeting[user_ids][]' -%>
+                <%= label_tag user.id, image_tag('/assets/avatars/' + user.image, :height => 180, :width => 150) -%>
+              <% end %>
+            <% end%>
+          </li>
+        <% end %>
+      </ul>
+      <%= f.label :client_id %>
+      <%= f.select :client_id, Client.order(:name).all.map { |c| [c.name, c.id] } %>
+      <br/>
+      <%= f.label :hours %>
+      <%= f.select :hours, 1.step(7, 0.5) %>
+      <br/>
+      <%= f.submit %>
+    </section>
   </div>
 <% end %>
