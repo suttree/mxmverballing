@@ -5,7 +5,7 @@
 <%= form_for @meeting do |f| %>
   <div id='users'>
     <ul>
-      <% @users.in_groups_of(4) do |users| %>
+      <% @users.in_groups_of(3) do |users| %>
         <li>
           <% users.each do |user| %>
             <% if user %>
