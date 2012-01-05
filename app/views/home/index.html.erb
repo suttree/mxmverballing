@@ -13,13 +13,11 @@
           </li>
         <% end %>
       </ul>
-      <%= f.label :client_id %>
       <%= f.select :client_id, Client.order(:name).all.map { |c| [c.name, c.id] } %>
       <br/>
-      <%= f.label :hours %>
-      <%= f.select :hours, 1.step(7, 0.5) %>
+      <%= f.select :hours, 1.step(7, 0.5).collect{ |i| pluralize(i, 'hour') } %>
       <br/>
-      <%= f.submit %>
+      <%= f.submit 'Verbal' %>
     </section>
   </div>
 <% end %>
