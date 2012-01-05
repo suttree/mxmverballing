@@ -2,7 +2,7 @@ class MeetingsController < ApplicationController
   def index
     @meetings = Meeting.paginate(:page => params[:page])
   end
-  
+
   def show
     @meeting = Meeting.find(params[:id])
   end
@@ -11,9 +11,9 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new(params[:meeting])
 
     if @meeting.save
-      flash[:notice] = 'Meeting created'
+      flash[:notice] = 'Totally, like, verballed that bro'
     else
-      flash[:notice] = 'Error creating meeting'
+      flash[:notice] = 'Dude, wait, that crashed'
     end
 
     redirect_to '/'

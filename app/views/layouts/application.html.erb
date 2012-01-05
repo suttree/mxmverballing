@@ -7,9 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to image_tag 'mxmlogo.gif', :url => '/' %> <span id='title'>verballing</span>
-  <div id='flash'><%= flash[:notice] %></div>
+  <div id='header'>
+    <%= link_to image_tag 'mxmlogo.gif', :url => '/' %> <span id='title'>verballing</span>
+    <span id='flash'><%= flash[:notice] %></span>
+  </div>
   <%= yield %>
-  <%= link_to 'All meetings', meetings_path %>
 </body>
 </html>

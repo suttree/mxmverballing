@@ -18,6 +18,8 @@
       <%= f.select :hours, 1.step(7, 0.5).collect{ |i| pluralize(i, 'hour') } %>
       <br/>
       <%= f.submit 'Verbal' %>
+      <br/>
+      <%= link_to 'All meetings', meetings_path, :id => 'all_meetings' %>
     </section>
   </div>
 <% end %>

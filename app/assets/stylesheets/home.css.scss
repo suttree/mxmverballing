@@ -37,11 +37,22 @@ select {
   padding: 5px;
   font-size: 16px;
   border: 1px solid #ccc;
-  display: inline;
+  display: inline-block;
 }
 
 input[type='submit'] {
   background: transparent;
   border: 1px solid #006;
   font-size: 16px;
+}
+
+a#all_meetings {
+  color: #002;
+  padding: 1em;
+  float: right;
+  text-transform: uppercase;
+}
+
+a#all_meetings:visited {
+  color: #002;
 }

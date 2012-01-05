@@ -11,6 +11,18 @@ body {
   background: url(/assets/bg.gif) top center no-repeat #133753;
 }
 
+#header {
+  width: 650px;
+  margin: 10px auto;
+}
+
+#flash {
+  color: white;
+  float: right;
+  font-style: italic;
+  vertical-align: bottom;
+}
+
 span#title {
   color: white;
   font-size: 24px;
