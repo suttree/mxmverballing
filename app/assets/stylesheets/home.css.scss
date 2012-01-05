@@ -50,7 +50,16 @@ a#all_meetings {
   color: #002;
   padding: 1em;
   float: right;
+  background-color: #fdd;
+  border-top: 2px solid #cce;
+  border-left: 2px solid #ccd;
+  text-decoration: none;
   text-transform: uppercase;
+}
+
+a#all_meetings:hover {
+  background-color: #ede;
+  text-decoration: underline;
 }
 
 a#all_meetings:visited {

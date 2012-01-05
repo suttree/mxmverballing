@@ -1,15 +1,15 @@
 <div id='users'>
   <ul>
     <% @meetings.each do |meeting| %>
-      <li>
-        <%= pluralize(meeting.hours, 'hour') %> on <%= meeting.client.name %>, <%= time_ago_in_words(meeting.created_at) %> ago.
-        <br/>
-        <% meeting.users.in_groups_of(4) do |users| %>
+      <li id='meeting'>
+        <div id='client'><%= meeting.client.name %></div>
+        <% meeting.users.in_groups_of(6) do |users| %>
           <% users.each do |user| %>
             <%= image_tag('/assets/avatars/' + user.image, :height => '90', :width => '74') if user %>
           <% end %>
           <br/>
         <% end %>
+        <div id='meta'><%= pluralize(meeting.hours, 'hour') %> on <%= meeting.created_at.strftime("%b #{meeting.created_at.day.ordinalize}, %Y") %></div>
       </li>
     <% end %>
   </ul>

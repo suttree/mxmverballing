@@ -1,6 +1,6 @@
 class MeetingsController < ApplicationController
   def index
-    @meetings = Meeting.paginate(:page => params[:page])
+    @meetings = Meeting.latest.paginate(:page => params[:page])
   end
 
   def show

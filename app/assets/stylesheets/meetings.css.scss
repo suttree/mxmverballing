@@ -7,3 +7,20 @@ div.pagination {
   margin: 10px auto;
   text-align: center;
 }
+
+li#meeting {
+  padding: 1em 0 1em 0;
+  margin-right: 2.5em;
+  border-bottom: 1px solid #ccd;
+}
+
+div#client {
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+div#meta {
+  font-style: italic;
+  padding-top: 0.5em;
+}
